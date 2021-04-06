@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewData["Title"] = "Contact";
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+
+<h3>İletişim Bilgilerimiz</h3>
+
+<p>Burada iletişim bilgilerimizi bulabilirsiniz...(ekstradan şube bilgileri de eklenebilir.)</p>
+
+<div class="row">
+    <div class="col-md-4">
+        <h5>Adres </h5> @ViewBag.Adres
+    </div>
+    <div class="col-md-4">
+        <h5>Eposta </h5> @ViewBag.Eposta
+    </div>
+    <div class="col-md-4">
+        <h5>Telefon </h5> @ViewBag.Telefon
+    </div>
+</div>
+
