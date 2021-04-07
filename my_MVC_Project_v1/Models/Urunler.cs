@@ -7,7 +7,7 @@ namespace my_MVC_Project_v1.Models
 {
     public class Urunler
     {
-        public int ProductId { get; set; }
+        public int Id { get; set; }
         public string ProductName { get; set; }
         public string ProductDescription { get; set; }
         public string ProductCategory { get; set; }  // Belki ihtiyaç olursa Subcategory de eklenebilir.

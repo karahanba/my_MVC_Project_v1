@@ -1,0 +1,50 @@
+﻿@model my_MVC_Project_v1.Models._Iletisim
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Edit</h1>
+
+<form asp-area="Admin" asp-controller="Info" asp-action="Edit" method="post">
+    <input type="hidden" asp-for="Id" />
+    <div class="form-group">
+        <label asp-for="Address">Adres</label>
+        <input type="text" class="form-control" asp-for="Address" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Email">E-posta</label>
+        <input type="text" class="form-control" asp-for="Email" />
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber">Telefon</label>
+        <input type="text" class="form-control" asp-for="PhoneNumber" />
+    </div>
+    <div class="form-group">
+        <label asp-for="About">Hakkında</label>
+        <input type="text" class="form-control" asp-for="About" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Privacy">Gizlilik Beyanı</label>
+        <input type="text" class="form-control" asp-for="Privacy" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Facebook">Facebook Url</label>
+        <input type="text" class="form-control" asp-for="Facebook" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Twitter">Twitter Url</label>
+        <input type="text" class="form-control" asp-for="Twitter" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Instagram">Instagram Url</label>
+        <input type="text" class="form-control" asp-for="Instagram" />
+    </div>
+    <div class="form-group">
+        <label asp-for="Linkedin">Linkedin Url</label>
+        <input type="text" class="form-control" asp-for="Linkedin" />
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Değişiklikleri Kaydet" /><br /><br />
+</form>

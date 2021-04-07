@@ -6,21 +6,31 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using my_MVC_Project_v1.Models;
+
 
 namespace my_MVC_Project_v1
 {
     public class Startup
     {
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
+
+        public IConfiguration Configuration { get; }
+
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddDbContext<AmazingContext>(options =>
             {
-                options.UseSqlServer("server=LAPTOP-8H4E7KRP;database=DbForAmazingProject;trusted_connection=true;");
+                options.UseSqlServer(Configuration["ConnectionStrings:MyConnection"]);
+                //options.UseSqlServer("server=LAPTOP-8H4E7KRP;database=DbForAmazingProject;trusted_connection=true;");
             });
 
             services.AddMvc();
@@ -41,12 +51,16 @@ namespace my_MVC_Project_v1
             app.UseEndpoints(endpoints =>
             {
 
-                //endpoints.MapControllerRoute(
-                //   name:"default",
-                //   pattern:"{controller=Home}/{action=Start}/{id?}"
-                //    );
+                endpoints.MapAreaControllerRoute(
+                    name: "Admin",
+                    areaName: "Admin", pattern: "Admin/{controller=Info}/{action=Index}/{id?}");
+                
+                endpoints.MapControllerRoute(
+                   name: "default",
+                   pattern: "{controller=Home}/{action=Index}/{id?}"
+                    );
 
-                endpoints.MapDefaultControllerRoute();
+                //endpoints.MapDefaultControllerRoute();
 
                 //endpoints.MapGet("/", async context =>
                 //{

@@ -1,0 +1,29 @@
+﻿@model my_MVC_Project_v1.Models.Urunler
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+<h1>Edit</h1>
+
+<form asp-area="Admin" asp-controller="Product" asp-action="Edit" method="post">
+    <div class="form-group">
+        <label asp-for="ProductName">Ürün Adı</label>
+        <input type="text" class="form-control" asp-for="ProductName" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductDescription">Ürün Açıklaması</label>
+        <input type="text" class="form-control" asp-for="ProductDescription" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductCategory">Ürün Kategorisi</label>
+        <input type="text" class="form-control" asp-for="ProductCategory" />
+    </div>
+    <div class="form-group">
+        <label asp-for="ProductPrice">Ürün Fiyatı</label>
+        <input type="text" class="form-control" asp-for="ProductPrice" />
+    </div>
+
+    <input type="submit" class="btn btn-success" value="Değişiklikleri Kaydet" />
+</form>

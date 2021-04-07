@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_MyLayoutPage.cshtml";
+}
+
+
+<h1>Products</h1>
+
+<div class="row" style="margin-top:50px">
+    <h1>Ürün Kataloğu</h1>
+
+    <table class="table table-hover">
+        <tr>
+            <td>Id</td>
+            <td>Ürün Adı</td>
+            <td>Açıklama</td>
+            <td>Kategori</td>
+            <td>Fiyat</td>
+            <td>###</td>
+            <td>###</td>
+            @*tablo yerine card kullanarak yapmayi da deneyecegim*@
+        </tr>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.ProductName</td>
+                <td>@item.ProductDescription</td>
+                <td>@item.ProductCategory</td>
+                <td>@item.ProductPrice ₺</td>
+                <td><a href="Product/Edit/@item.Id">Düzenle</a></td>
+                <td><a href="Product/Delete/@item.Id">Sil</a></td>
+            </tr>
+        }
+    </table>
+</div>
+
+

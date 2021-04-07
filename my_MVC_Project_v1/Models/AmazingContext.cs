@@ -16,6 +16,6 @@ namespace my_MVC_Project_v1.Models
 
         public DbSet<_Iletisim> Contact { get; set; } // Contact is table's name in db
 
-        //public DbSet<>
+        public DbSet<Urunler> Products { get; set; }
     }
 }

@@ -2,15 +2,17 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using my_MVC_Project_v1.Models;
 
 namespace my_MVC_Project_v1.Migrations
 {
     [DbContext(typeof(AmazingContext))]
-    partial class AmazingContextModelSnapshot : ModelSnapshot
+    [Migration("20210406115218_contactextras")]
+    partial class contactextras
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
